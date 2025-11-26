@@ -148,7 +148,6 @@ func main() {
 		}
 	}
 
-	// follow back
 	for _, follow_back := range follow_back_array {
 		err := client.follow_user(follow_back)
 		if err != nil {
