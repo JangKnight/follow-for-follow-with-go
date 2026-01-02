@@ -4,7 +4,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: "@hourly"
+    - cron: "0 */4 * * *"
   workflow_dispatch:
 jobs:
   run:
