@@ -4,6 +4,3 @@
 > now, fully automated on github via actions
 
 <br>
-
-##### 11/20/2025
-> running into key expiration rotation issue, so I've started creating a gui that will generate, sign (if applicable), monitor, rotate/retire/revoke keys
