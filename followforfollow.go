@@ -179,7 +179,6 @@ func main() {
 		exempted := slices.Contains(exempt_users_array, unfollow)
 		if exempted {
 			fmt.Println("Exempted from unfollowing:", unfollow)
-			fmt.Print("--------------------------------------------------------------\n\n")
 			continue
 		}
 		err := client.unfollow_user(unfollow)
@@ -187,4 +186,5 @@ func main() {
 			panic(err)
 		}
 	}
+	fmt.Print("--------------------------------------------------------------\n\n")
 }
