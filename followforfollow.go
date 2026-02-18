@@ -127,7 +127,7 @@ func main() {
 	followers_array, _ := client.fetch_user_list(url_gh_followers)
 	following_array, _ := client.fetch_user_list(url_gh_following)
 
-	fmt.Println(time.Now().Format("2000-01-02 01:02:03"))
+	fmt.Println(time.Now().Format("2006-01-02 15:04:05"))
 	fmt.Println("Followers:", len(followers_array))
 	fmt.Println("Following:", len(following_array))
 
