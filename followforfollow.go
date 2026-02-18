@@ -10,6 +10,7 @@ import (
 	"slices"
 	"sort"
 	"strings"
+	"time"
 )
 
 func loadToken() (string, error) {
@@ -126,6 +127,7 @@ func main() {
 	followers_array, _ := client.fetch_user_list(url_gh_followers)
 	following_array, _ := client.fetch_user_list(url_gh_following)
 
+	fmt.Println(time.Now().Format("2000-01-02 01:02:03"))
 	fmt.Println("Followers:", len(followers_array))
 	fmt.Println("Following:", len(following_array))
 
@@ -177,6 +179,7 @@ func main() {
 		exempted := slices.Contains(exempt_users_array, unfollow)
 		if exempted {
 			fmt.Println("Exempted from unfollowing:", unfollow)
+			fmt.Print("--------------------------------------------------------------\n\n")
 			continue
 		}
 		err := client.unfollow_user(unfollow)
