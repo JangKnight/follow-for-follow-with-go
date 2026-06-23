@@ -134,6 +134,21 @@ func main() {
 	sort.Strings(followers_array)
 	sort.Strings(following_array)
 
+	// Accounts GitHub flags/restricts: a PUT to follow them returns 204 ("success")
+	// but the follow never actually sticks, so they reappear in follow_back_array
+	// every run. Skip them to avoid the pointless follow attempts and log spam.
+	cannot_follow_array := []string{
+		"sphinxzerd",
+		"BERDLYY",
+		"REIJISAKAMAKI",
+		"REVOLV1NG",
+		"eun-yung",
+		"hellen-ansah",
+		"pawerrx",
+		"songofhealing",
+		"swe3tt0oth",
+	}
+
 	// Determine who is following me that I am not following back
 	follow_back_array := []string{}
 	for _, user_that_follows_me := range followers_array {
@@ -144,7 +159,7 @@ func main() {
 				break
 			}
 		}
-		if !i_follow_this_user && user_that_follows_me != "sphinxzerd" { // exclude bot accounts
+		if !i_follow_this_user && !slices.Contains(cannot_follow_array, user_that_follows_me) {
 			fmt.Println("-", user_that_follows_me)
 			follow_back_array = append(follow_back_array, user_that_follows_me)
 		}
