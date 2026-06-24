@@ -1,6 +1,23 @@
+backups/
+Planning/
+examples/
+Exercise*
+*zzz*
+PRD.*
+GEMINI.md
 CLAUDE.md
 AGENTS.md
-*curr_models*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+venv/
+ENV/
+env/
+.Python
+
 # Dependencies
 node_modules/
 .pnp
@@ -42,15 +59,13 @@ logs/
 *.db
 *.sqlite
 
-# Go binaries
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
-follower_diff
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+.terraform.lock.hcl
 
-# Go testing
-*.out
+.gitignore
 
-res.json
+
